@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>New York Times Search</title>
+    <!-- Bootswatch Styling for Improving the Aesthetics -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
+  
+    <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  
+    <!-- Style to fix the issue of text extending past panel length -->
+    <style>
+      .panel-body a {
+        word-break: break-all;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div class="background">
+        <div class="container">
+            <div class="row">
+                <div class="jumbotron jumbotron-fluid">
+                    <h1>Train Scheduler</h1>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <form>
+                <div class="form-group">
+                    <label> Train Name:</label>
+                    <input type="text" class="form-control" id="search-term" >
+                </div>
+                <div class="form-group">
+                    <label for="recordsNumber">Destination:</label>
+                    <input type="text" class="form-control" id="recordsNumber">
+                </div>
+                <div class="form-group">
+                    <label for="startYear">First Train Time (HH:mm - military time) </label>
+                    <input type="text" class="form-control" id="startYear">
+                </div>
+                <div class="form-group">
+                    <label for="endYear">Frequency (min)</label>
+                    <input type="text" class="form-control" id="endYear">
+                </div>
+
+
+                <button id="run-search" type="submit" class="btn btn-primary">Submit</button>
+                
+            </form>
+        </div>
+
+    </div>
+
+  
+    <!-- jQuery JS -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+  
+    <!-- Code to the JavaScript File -->
+    <script src="../unsolved/api.js"></script>
+
+
+  
+  
+  
+  
+  </body></html>
