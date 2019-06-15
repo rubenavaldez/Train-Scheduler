@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- saved from url=(0164)file:///C:/Users/ruben/Downloads/UATUC201904FSF4-master%20(13)/UATUC201904FSF4-master/class-content/week-07/Day%203/Activities/17-TimeSheet/Instructions/index.html? -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!--JQuery-->
+  <script src="./Document_files/jquery.min.js.download"></script>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="./Document_files/bootstrap.min.css">
+  <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+  <link rel="stylesheet" href="./Document_files/font-awesome.min.css">
+  
+  <!--Link to external CSS Style sheet-->
+  <!-- <link rel="stylesheet" type="text/css" href="./assets/css/style.css">-->
+</head>
+<body>
+  <div class="background">
+    <div class="container">
+      <div class="row">
+        <div class="jumbotron jumbotron-fluid m-3 bg-dark text-light col col-lg-12 text-center ">
+          <header>
+            <aria-hidden="true">
+              <h1>Employee Data Management</h1>
+              <h3>A Comprehensive Directory of Employee Billable Hours</h3>
+          </aria-hidden="true"></header>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="card m-3 col col-lg-12">
+          <div class="card-header"> Current Employees</div>
+          <hr style="width: 100%; color:silver"><table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Role</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">Months Worked</th>
+                <th scope="col">Monthly Rate ($)</th>
+                <th scope="col">Total Billed</th>
+              </tr>
+            </thead>
+            
+            <tbody id="employee-text">
+              <tr>
+                <td id="Employee1"></td>
+                <td id="Role1"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td id="Employee2"></td>
+                <td id="Role2"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td id=" Employee3"></td>
+                <td id="Role3"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="card m-3 p-2 col col-lg-12">
+          <form>
+            <div class="form-group">
+              <label for="search">Employee Name:</label>
+              <input type="text" class="form-control" id="empName">
+            </div>
+            <div class="form-group">
+              <label for="recordsNumber">Role:</label>
+              <input type="text" class="form-control" id="Role">
+            </div>
+            <div class="form-group">
+              <label for="startYear">Start Date</label>
+              <input type="text" class="form-control" id="startDate">
+            </div>
+            <div class="form-group">
+              <label for="endYear">Monthly Rate:</label>
+              <input type="text" class="form-control" id="monthRate">
+            </div>
+            <button id="submit" type="submit" class="btn m-2 btn-dark">Submit</button>
+          </form>
+        </div>
+      </div>
+      <script src="./Document_files/firebase-app.js.download"></script>
+ <script src="./Document_files/firebase-database.js.download"></script>
+      <script src="file:///C:/Users/ruben/Downloads/UATUC201904FSF4-master%20(13)/UATUC201904FSF4-master/class-content/week-07/Day%203/Activities/17-TimeSheet/Instructions/employee.js"></script>
+
+</div></div></body></html>

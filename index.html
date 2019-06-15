@@ -1,68 +1,83 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-    <meta charset="UTF-8">
-    <title>New York Times Search</title>
-    <!-- Bootswatch Styling for Improving the Aesthetics -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
-  
-    <!-- Font Awesome CSS Icons (For cool glyphicons) -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  
-    <!-- Style to fix the issue of text extending past panel length -->
-    <style>
-      .panel-body a {
-        word-break: break-all;
-      }
-    </style>
-  </head>
-  
-  <body>
-    <div class="background">
-        <div class="container">
-            <div class="row">
-                <div class="jumbotron jumbotron-fluid">
-                    <h1>Train Scheduler</h1>
-                    
-                </div>
-            </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!--JQuery-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+  <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+  <!--Link to external CSS Style sheet-->
+  <!-- <link rel="stylesheet" type="text/css" href="./assets/css/style.css">-->
+</head>
+<body>
+  <div class="background">
+    <div class="container">
+      <div class="row">
+        <div class="jumbotron jumbotron-fluid m-3 bg-dark text-light col col-lg-12 text-center ">
+          <header>
+            <aria-hidden="true">
+              <h1>Train Scheduler</h1>
+              <h3>Up date train arrivals</h3>
+          </header>
         </div>
-        <div class="container">
-            <form>
-                <div class="form-group">
-                    <label> Train Name:</label>
-                    <input type="text" class="form-control" id="search-term" >
-                </div>
-                <div class="form-group">
-                    <label for="recordsNumber">Destination:</label>
-                    <input type="text" class="form-control" id="recordsNumber">
-                </div>
-                <div class="form-group">
-                    <label for="startYear">First Train Time (HH:mm - military time) </label>
-                    <input type="text" class="form-control" id="startYear">
-                </div>
-                <div class="form-group">
-                    <label for="endYear">Frequency (min)</label>
-                    <input type="text" class="form-control" id="endYear">
-                </div>
-
-
-                <button id="run-search" type="submit" class="btn btn-primary">Submit</button>
-                
-            </form>
-        </div>
-
+      </div>
     </div>
-
-  
-    <!-- jQuery JS -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-  
-    <!-- Code to the JavaScript File -->
-    <script src="../unsolved/api.js"></script>
-
-
-  
-  
-  
-  
-  </body></html>
+    <div class="container">
+      <div class="row">
+        <div class="card m-3 col col-lg-12">
+          <div class="card-header"> Train Schedule</div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Train Name</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Frequency (min)</th>
+                <th scope="col">Next arrival</th>
+                <th scope="col">Minutes Away</th>
+                
+              </tr>
+            </thead>
+            <hr style="width: 100%; color:silver">
+            <tbody id="employee-text">
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="card m-3 p-2 col col-lg-12">
+          <form>
+            <div class="form-group">
+              <label for="search">Train Name:</label>
+              <input type="text" class="form-control" id="trainName">
+            </div>
+            <div class="form-group">
+              <label for="recordsNumber">Destination:</label>
+              <input type="text" class="form-control" id="destination">
+            </div>
+            <div class="form-group">
+              <label for="startYear">First Train Time (HH:MM)</label>
+              <input type="text" class="form-control" id="time">
+            </div>
+            <div class="form-group">
+              <label for="endYear">Frequency:</label>
+              <input type="text" class="form-control" id="frequency">
+            </div>
+            <button id="submit" type="submit" class="btn m-2 btn-dark">Submit</button>
+          </form>
+        </div>
+      </div>
+      <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+      <script src="app.js"></script>
+</body>
+</html>
