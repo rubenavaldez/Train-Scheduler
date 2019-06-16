@@ -16,8 +16,8 @@ function trainAdd() {
         "<td>" + trainInput + "</td>"
         + "<td>" + destinationInput + "</td>"
         + "<td>" + frequencyInput + "</td>"
-        + "<td>" + howMuchLonger + "</td>"
-        + "<td>" +  arrivalText + "</td>"
+        + "<td>" + arrivalText + "</td>"
+        + "<td>" +  howMuchLonger + "</td>"
         + "</tr>"
     );
     console.log(remainder)
