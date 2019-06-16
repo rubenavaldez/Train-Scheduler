@@ -1,97 +1,78 @@
 var trainInput;
-var destinationInput; 
-var timeInput; 
-var frequencyInput; 
+var destinationInput;
+var timeInput;
+var frequencyInput;
 
-function employeeAdd() {
+function trainAdd() {
     $("#employee-text").append(
         "<tr>" +
-        "<td>" + employeeInput + "</td>"
-        + "<td>" + roleInput + "</td>"
-        + "<td>" + dateInput + "</td>"
-        + "<td>" + rateInput + "</td>"
-        + "<td>" + rateInput + "</td>"
-        
+        "<td>" + trainInput + "</td>"
+        + "<td>" + destinationInput + "</td>"
+        + "<td>" + timeInput + "</td>"
+        + "<td>" + frequencyInput + "</td>"
+        + "<td>" + timeInput + "</td>"
         + "</tr>"
     );
 }
 
+
+
+
+// Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyA-4RCOuX3lYGXJHqj7Q6a-6K_l7uN7xcU",
-    authDomain: "train-scheduler-cb858.firebaseapp.com",
-    databaseURL: "https://train-scheduler-cb858.firebaseio.com",
-    projectId: "train-scheduler-cb858",
-    storageBucket: "train-scheduler-cb858.appspot.com",
-    messagingSenderId: "742211835570",
-    appId: "1:742211835570:web:01d2a932fb98fc82"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+    apiKey: "AIzaSyBAq-ncA6gwPqsd218TSijIyPuCj9X3tpE",
+    authDomain: "train-scheduler-d1220.firebaseapp.com",
+    databaseURL: "https://train-scheduler-d1220.firebaseio.com",
+    projectId: "train-scheduler-d1220",
+    storageBucket: "train-scheduler-d1220.appspot.com",
+    messagingSenderId: "744323586617",
+    appId: "1:744323586617:web:f09dcc278d383fb6"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
 
 database = firebase.database()
 
 database.ref().on("child_added", function (snapshot) {
+    // console.log(snapshot)
 
-    // if (snapshot.val().employee == undefined) {
-    //     employeeInput = "Name";
-    // } else {
-    //     employeeInput = snapshot.val().employee
-    // }
-
-
-   
     trainInput = snapshot.val().train
     destinationInput = snapshot.val().destination
     timeInput = snapshot.val().time
     frequencyInput = snapshot.val().frequency
 
 
-    
+    trainAdd()
 
-    // if (snapshot.val().employee == undefined) {
-    //     roleInput = "Role";
-    // } else {
-    //     roleInput = snapshot.val().role
-    // }
-
-    //     if (snapshot.val().employee == undefined){
-    //         dateInput = "Employee";
-    //     }else{
-
-
-    //     dateInput = snapshot.val().startdate
-    //     }
-
-    //     if (snapshot.val().employee == undefined){
-    //         rateInput = "Rate";
-    //     }else{
-    //     rateInput = snapshot.val().monthly
-    //     }
-        // employeeAdd()
-
-    });
+});
 
 $("body").on("click", "#submit", function () {
 
     trainInput = $("#trainName").val().trim();
+
     destinationInput = $("#destination").val().trim();
+
     timeInput = $("#time").val().trim();
+
     frequencyInput = $("#frequency").val().trim();
 
-    console.log(trainInput)
-    database.ref().push({
+    if (trainInput == "" || destinationInput == "" || timeInput == "" || frequencyInput == "") {
+        alert("you complete all fields")
+    } else {
+        database.ref().push({
 
-        train: trainInput,
-        destination: destinationInput,
-        time: timeInput,
-        frequency: frequencyInput,
-        
-    })
+            train: trainInput,
+            destination: destinationInput,
+            time: timeInput,
+            frequency: frequencyInput
 
+        })
 
+    }
 });
 
 
-console.log(moment().format())
-moment("unixTimeStamp", "YYYYMMDD").fromNow();    
-moment().add(10,'days').calendar();  
+// console.log(moment().format())
+// moment("unixTimeStamp", "YYYYMMDD").fromNow();    
+// moment().add(10,'days').calendar();  
