@@ -2,3 +2,17 @@
 .panel-body a {
     word-break: break-all;
   }
+
+
+  body {
+    background-image: url(../images/yard.jpg)
+  }
+
+  
+
+  table {
+    
+    font-size: 16pt;
+    color:blue;
+    
+  } 
